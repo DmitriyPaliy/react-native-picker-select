@@ -9,7 +9,8 @@ export const defaultStyles = StyleSheet.create({
         right: 0,
     },
     modalViewTop: {
-        flex: 1,
+        flex: 0,
+        height: Dimensions.get('window').height - 265,
     },
     modalViewMiddle: {
         height: 45,

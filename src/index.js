@@ -15,6 +15,7 @@ import { Picker } from '@react-native-picker/picker';
 import { defaultStyles } from './styles';
 
 const TouchableOpacity = Platform.OS === 'ios' ? TouchableOpacityIOS : TouchableOpacityAndroid;
+
 export default class RNPickerSelect extends PureComponent {
     static propTypes = {
         onValueChange: PropTypes.func.isRequired,

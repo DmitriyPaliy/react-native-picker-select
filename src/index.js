@@ -1,11 +1,20 @@
 import React, { PureComponent } from 'react';
-import { Keyboard, Modal, Platform, Text, TextInput, View } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import {
+    Keyboard,
+    Modal,
+    Platform,
+    Text,
+    TextInput,
+    TouchableOpacity as TouchableOpacityAndroid,
+    View,
+} from 'react-native';
+import { TouchableOpacity as TouchableOpacityIOS } from 'react-native-gesture-handler';
 import PropTypes from 'prop-types';
 import isEqual from 'lodash.isequal';
 import { Picker } from '@react-native-picker/picker';
 import { defaultStyles } from './styles';
 
+const TouchableOpacity = Platform.OS === 'ios' ? TouchableOpacityIOS : TouchableOpacityAndroid;
 export default class RNPickerSelect extends PureComponent {
     static propTypes = {
         onValueChange: PropTypes.func.isRequired,
@@ -113,7 +122,6 @@ export default class RNPickerSelect extends PureComponent {
 
     constructor(props) {
         super(props);
-
         const items = RNPickerSelect.handlePlaceholder({
             placeholder: props.placeholder,
         }).concat(props.items);

@@ -168,7 +168,7 @@ export default class RNPickerSelect extends PureComponent {
             !isEqual(this.props.value, undefined) && !isEqual(prevState.selectedItem, selectedItem);
 
         if (itemsChanged || selectedItemChanged) {
-            this.props.onValueChange(selectedItem.value, idx);
+            this.props.onValueChange(selectedItem?.value, idx);
 
             this.setState({
                 ...(itemsChanged ? { items } : {}),
@@ -465,7 +465,7 @@ export default class RNPickerSelect extends PureComponent {
                         <Picker
                             testID="ios_picker"
                             onValueChange={this.onValueChange}
-                            selectedValue={selectedItem.value}
+                            selectedValue={selectedItem?.value}
                             {...pickerProps}
                         >
                             {this.renderPickerItems()}
@@ -507,7 +507,7 @@ export default class RNPickerSelect extends PureComponent {
                         testID="android_picker_headless"
                         enabled={!disabled}
                         onValueChange={this.onValueChange}
-                        selectedValue={selectedItem.value}
+                        selectedValue={selectedItem?.value}
                         {...pickerProps}
                     >
                         {this.renderPickerItems()}
@@ -532,7 +532,7 @@ export default class RNPickerSelect extends PureComponent {
                     testID="android_picker"
                     enabled={!disabled}
                     onValueChange={this.onValueChange}
-                    selectedValue={selectedItem.value}
+                    selectedValue={selectedItem?.value}
                     {...pickerProps}
                 >
                     {this.renderPickerItems()}
@@ -553,7 +553,7 @@ export default class RNPickerSelect extends PureComponent {
                     testID="web_picker"
                     enabled={!disabled}
                     onValueChange={this.onValueChange}
-                    selectedValue={selectedItem.value}
+                    selectedValue={selectedItem?.value}
                     {...pickerProps}
                 >
                     {this.renderPickerItems()}
